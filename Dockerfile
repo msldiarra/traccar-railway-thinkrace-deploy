@@ -10,12 +10,18 @@ RUN apk add --no-cache git
 # URL of your traccar fork (Repo A)
 ARG TRACCAR_REPO=https://github.com/msldiarra/traccar-thinkrace.git
 
-# Clone your fork
+# Clone your fork into /build/src
 RUN git clone "$TRACCAR_REPO" src
 
+# Move into the repo directory
+WORKDIR /build/src
+
 # IMPORTANT: remove any host-specific gradle.properties that
-# might contain org.gradle.java.home=/usr/lib/jvm/... from your host
+# might contain org.gradle.java.home or similar
 RUN rm -f gradle.properties
+
+# Make sure Gradle wrapper is executable
+RUN chmod +x gradlew
 
 # Build server + copyDependencies (no tests/checkstyle)
 RUN ./gradlew clean copyDependencies --no-daemon -x test -x check
