@@ -30,7 +30,8 @@ RUN ./gradlew clean assemble --no-daemon -x test -x check
 
 
 # ---------- Stage 2: runtime image ----------
-FROM traccar/traccar:6.10  # or :latest, but 6.10 matches your build
+# or :latest, but 6.10 matches your build
+FROM traccar/traccar:6.10
 
 # (optional) we still want envsubst in our custom entrypoint
 RUN apk add --no-cache gettext dos2unix
@@ -42,7 +43,7 @@ COPY traccar.xml.template /opt/traccar/conf/traccar.xml.template
 COPY entrypoint.sh /entrypoint.sh
 RUN dos2unix /entrypoint.sh && chmod +x /entrypoint.sh
 
-# 🔥 Override Traccar server JAR with your custom build
+# Override Traccar server JAR with your custom build
 COPY --from=build /build/src/target/*.jar /opt/traccar/tracker-server.jar
 
 # (optional but clean) override lib directory as well,
