@@ -2,6 +2,8 @@
 set -e
 
 echo "[Traccar] Preparing configuration from template..."
+echo "[DEBUG] DB_URL=$DB_URL"
+echo "[DEBUG] DB_USER=$DB_USER"
 
 # Render config from template with env vars
 envsubst < /opt/traccar/conf/traccar.xml.template > /opt/traccar/conf/traccar.xml
