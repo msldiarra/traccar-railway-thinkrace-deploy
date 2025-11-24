@@ -52,5 +52,8 @@ COPY --from=build /build/src/target/lib ./lib
 # NEW: copy Liquibase schema directory
 COPY --from=build /build/src/schema ./schema
 
+# NEW: Copy web UI (Angular)
+COPY --from=build /build/src/web ./web
+
 ENTRYPOINT ["/entrypoint.sh"]
 
