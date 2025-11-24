@@ -3,8 +3,13 @@ set -e
 
 echo "[Traccar] Preparing configuration from template..."
 
-# Render config from env vars into traccar.xml
+# Render config from template with env vars
 envsubst < /opt/traccar/conf/traccar.xml.template > /opt/traccar/conf/traccar.xml
 
 echo "[Traccar] Starting server..."
-exec java -jar /opt/traccar/tracker-server.jar /opt/traccar/conf/traccar.xml
+
+# IMPORTANT: use Traccar’s bundled JRE
+exec /opt/traccar/jre/bin/java \
+  -Djava.net.preferIPv4Stack=true \
+  -jar /opt/traccar/tracker-server.jar \
+  conf/traccar.xml
