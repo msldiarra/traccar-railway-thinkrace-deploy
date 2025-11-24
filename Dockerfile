@@ -30,30 +30,25 @@ RUN ./gradlew clean assemble --no-daemon -x test -x check
 
 
 # ---------- Stage 2: runtime image ----------
-FROM eclipse-temurin:17-jre-alpine
+FROM traccar/traccar:6.10  # or :latest, but 6.10 matches your build
+
+# (optional) we still want envsubst in our custom entrypoint
+RUN apk add --no-cache gettext dos2unix
 
 WORKDIR /opt/traccar
 
-# For envsubst in entrypoint.sh
-RUN apk add --no-cache gettext
-
-# Standard Traccar directories
-RUN mkdir -p conf logs data lib
-
-# Config template + entrypoint from this repo
-COPY traccar.xml.template conf/traccar.xml.template
+# Our config template + entrypoint from THIS repo
+COPY traccar.xml.template /opt/traccar/conf/traccar.xml.template
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN dos2unix /entrypoint.sh && chmod +x /entrypoint.sh
 
-# Copy built JAR + libs from build stage
-COPY --from=build /build/src/target/*.jar ./tracker-server.jar
-COPY --from=build /build/src/target/lib ./lib
+# 🔥 Override Traccar server JAR with your custom build
+COPY --from=build /build/src/target/*.jar /opt/traccar/tracker-server.jar
 
-# NEW: copy Liquibase schema directory
-COPY --from=build /build/src/schema ./schema
-
-# NEW: Copy web UI (Angular)
-COPY --from=build /build/src/web ./web
+# (optional but clean) override lib directory as well,
+# since assemble already populated target/lib with 6.10 deps
+COPY --from=build /build/src/target/lib /opt/traccar/lib
 
 ENTRYPOINT ["/entrypoint.sh"]
+
 
