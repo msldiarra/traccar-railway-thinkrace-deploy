@@ -16,9 +16,7 @@
     <entry key='database.url'>${DB_URL}</entry>
     <entry key='database.user'>${DB_USER}</entry>
     <entry key='database.password'>${DB_PASSWORD}</entry>
-    <!-- Improves performance on Railway / Cloud -->
-    <entry key='database.tasks.retryDelay'>2</entry>
-
+    
     <!-- (optional) Mail -->
     <entry key='mail.smtp.host'>${SMTP_HOST}</entry>
     <entry key='mail.smtp.port'>${SMTP_PORT}</entry>
