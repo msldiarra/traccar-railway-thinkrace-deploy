@@ -40,6 +40,9 @@
     <entry key='geolocation.key'>${GOOGLE_GEOLOCATION_KEY}</entry>
     <entry key='geolocation.processInvalidPositions'>true</entry>
 
+    <entry key='event.forward.url'>https://noqou-production.up.railway.app/api/notifications/webhook</entry>
+    <entry key='event.forward.header'>X-Webhook-Secret: ${NOTIFICATION_WEBHOOK_SECRET}</entry>
+
 
     <entry key='logger.console'>true</entry>
     <entry key='logger.level'>info</entry>
