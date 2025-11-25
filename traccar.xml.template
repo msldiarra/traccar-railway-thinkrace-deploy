@@ -5,11 +5,8 @@
     <entry key='web.port'>${PORT}</entry>
     <entry key='http.port'>${PORT}</entry>
     
-    <!--entry key='watch.port'>${WATCH_PORT}</entry-->
     <!--entry key='trv.port'>${WATCH_PORT}</entry-->
     <entry key='thinkracev22.port'>${WATCH_PORT}</entry>
-
-    <!--entry key='thinkrace.port'>${WATCH_PORT}</entry-->
 
     <!-- Database (PostgreSQL example) -->
     <entry key='database.driver'>org.postgresql.Driver</entry>
@@ -28,17 +25,6 @@
     <entry key='filter.zero'>false</entry>
     <entry key='filter.invalid'>false</entry>
     <entry key='filter.duplicate'>true</entry>
-
-    <!--entry key='geolocation.enable'>true</entry>
-    <entry key='geolocation.type'>opencellid</entry>
-    <entry key='geolocation.key'>pk.eca063c2953402d3b7cf0fdd0993f4b2</entry>
-    <entry key='geolocation.processInvalidPositions'>true</entry-->
-
-    <!--entry key='geolocation.enable'>true</entry>
-    <entry key='geolocation.type'>unwired</entry>
-    <entry key='geolocation.url'>https://us1.unwiredlabs.com/v2/process</entry>
-    <entry key='geolocation.key'>pk.d234dfeff96d1dd6704fd6b22c600ca6</entry>
-    <entry key='geolocation.processInvalidPositions'>true</entry-->
 
     <entry key='geolocation.enable'>true</entry>
     <entry key='geolocation.requireWifi'>false</entry>
