@@ -8,11 +8,16 @@
     <!--entry key='trv.port'>${WATCH_PORT}</entry-->
     <entry key='thinkracev22.port'>${WATCH_PORT}</entry>
 
+     <!-- Timezone -->
+    <entry key='server.timezone'>UTC</entry>
+
     <!-- Database (PostgreSQL example) -->
     <entry key='database.driver'>org.postgresql.Driver</entry>
     <entry key='database.url'>${DB_URL}</entry>
     <entry key='database.user'>${DB_USER}</entry>
     <entry key='database.password'>${DB_PASSWORD}</entry>
+    <!-- Improves performance on Railway / Cloud -->
+    <entry key='database.tasks.retryDelay'>2</entry>
 
     <!-- (optional) Mail -->
     <entry key='mail.smtp.host'>${SMTP_HOST}</entry>
@@ -25,11 +30,35 @@
     <entry key='filter.zero'>false</entry>
     <entry key='filter.invalid'>false</entry>
     <entry key='filter.duplicate'>true</entry>
+    <!-- Ignore jumps > 5000 km/h (sanity check) -->
+    <entry key='filter.maxSpeed'>5000</entry>
+
+    <!-- ============================
+         EVENTS / NOTIFICATIONS
+         ============================ -->
+
+    <entry key='event.enable'>true</entry>
+    <!-- Important: allow SOS even if same as last -->
+    <entry key='event.ignoreDuplicate'>false</entry>
 
     <entry key='geolocation.enable'>true</entry>
     <entry key='geolocation.requireWifi'>false</entry>
     <entry key='geolocation.type'>google</entry>
     <entry key='geolocation.key'>AIzaSyB4qeQAk5fKGTq1gstFhsoDrC8WVatQDks</entry>
+
+    <entry key='geolocation.retryDelay'>1</entry>
+    <entry key='geolocation.minAccuracy'>5000</entry>
+
+    <!-- ============================
+         PERFORMANCE / CLOUD
+         ============================ -->
+
+    <!-- Prevent OutOfMemory on Railway -->
+    <entry key='database.checkConnection'>true</entry>
+    <entry key='database.changeLog'>true</entry>
+
+    <entry key='database.timeout'>20</entry>
+    <entry key='database.maxPoolSize'>10</entry>
 
     <entry key='logger.console'>true</entry>
     <entry key='logger.level'>info</entry>
