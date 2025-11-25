@@ -36,9 +36,12 @@
          ============================ -->
 
     <entry key='event.ignoreDuplicateAlerts'>false</entry>
+
     <entry key='geolocation.enable'>true</entry>
     <entry key='geolocation.type'>google</entry>
     <entry key='geolocation.key'>${GOOGLE_GEOLOCATION_KEY}</entry>
+    <entry key='geolocation.processInvalidPositions'>true</entry>
+
 
     <entry key='logger.console'>true</entry>
     <entry key='logger.level'>info</entry>
