@@ -47,17 +47,6 @@
     <entry key='geolocation.retryDelay'>1</entry>
     <entry key='geolocation.minAccuracy'>5000</entry>
 
-    <!-- ============================
-         PERFORMANCE / CLOUD
-         ============================ -->
-
-    <!-- Prevent OutOfMemory on Railway -->
-    <entry key='database.checkConnection'>true</entry>
-    <entry key='database.changeLog'>true</entry>
-
-    <entry key='database.timeout'>20</entry>
-    <entry key='database.maxPoolSize'>10</entry>
-
     <entry key='logger.console'>true</entry>
     <entry key='logger.level'>info</entry>
     <entry key='logger.fullStackTraces'>true</entry>
