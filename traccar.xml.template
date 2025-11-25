@@ -28,8 +28,6 @@
     <entry key='filter.zero'>false</entry>
     <entry key='filter.invalid'>false</entry>
     <entry key='filter.duplicate'>true</entry>
-    <!-- Ignore jumps > 5000 km/h (sanity check) -->
-    <entry key='filter.maxSpeed'>6000</entry>
 
     <!-- ============================
          EVENTS / NOTIFICATIONS
