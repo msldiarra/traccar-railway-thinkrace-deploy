@@ -26,10 +26,10 @@
     <entry key='filter.invalid'>false</entry>
     <entry key='filter.duplicate'>true</entry>
 
-    <!--entry key='geolocation.enable'>true</entry>
+    <entry key='geolocation.enable'>true</entry>
     <entry key='geolocation.requireWifi'>false</entry>
     <entry key='geolocation.type'>google</entry>
-    <entry key='geolocation.key'>AIzaSyB4qeQAk5fKGTq1gstFhsoDrC8WVatQDks</entry-->
+    <entry key='geolocation.key'>AIzaSyB4qeQAk5fKGTq1gstFhsoDrC8WVatQDks</entry>
 
     <entry key='logger.console'>true</entry>
     <entry key='logger.level'>info</entry>
