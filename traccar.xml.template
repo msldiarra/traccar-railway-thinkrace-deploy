@@ -5,8 +5,8 @@
     <entry key='web.port'>${PORT}</entry>
     <entry key='http.port'>${PORT}</entry>
     
-    <!--entry key='trv.port'>${WATCH_PORT}</entry-->
-    <entry key='thinkracev22.port'>${WATCH_PORT}</entry>
+    <entry key='trv.port'>${WATCH_PORT}</entry>
+    <!--entry key='thinkracev22.port'>${WATCH_PORT}</entry-->
 
     <!-- Database (PostgreSQL example) -->
     <entry key='database.driver'>org.postgresql.Driver</entry>
