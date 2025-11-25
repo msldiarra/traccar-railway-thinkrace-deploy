@@ -39,6 +39,7 @@
     <entry key='geolocation.type'>google</entry>
     <entry key='geolocation.key'>${GOOGLE_GEOLOCATION_KEY}</entry>
     <entry key='geolocation.processInvalidPositions'>true</entry>
+    <entry key='geolocation.url'>https://www.googleapis.com/geolocation/v1/geolocate</entry>
 
 
     <entry key='logger.console'>true</entry>
