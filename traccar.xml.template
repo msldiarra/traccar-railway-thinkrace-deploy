@@ -35,17 +35,11 @@
          EVENTS / NOTIFICATIONS
          ============================ -->
 
-    <entry key='event.enable'>true</entry>
-    <!-- Important: allow SOS even if same as last -->
-    <entry key='event.ignoreDuplicate'>false</entry>
+    <entry key='event.ignoreDuplicateAlerts'>false</entry>
 
     <entry key='geolocation.enable'>true</entry>
-    <entry key='geolocation.requireWifi'>false</entry>
     <entry key='geolocation.type'>google</entry>
     <entry key='geolocation.key'>${GOOGLE_GEOLOCATION_KEY}</entry>
-
-    <entry key='geolocation.retryDelay'>1</entry>
-    <entry key='geolocation.minAccuracy'>5000</entry>
 
     <entry key='logger.console'>true</entry>
     <entry key='logger.level'>info</entry>
