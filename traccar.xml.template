@@ -24,6 +24,9 @@
     <entry key='mail.smtp.user'>${SMTP_USER}</entry>
     <entry key='mail.smtp.password'>${SMTP_PASSWORD}</entry>
 
+    <!-- ============================
+         Filtering
+         ============================ -->
     <entry key='filter.enable'>true</entry>
     <entry key='filter.zero'>true</entry>
     <entry key='filter.invalid'>false</entry>
@@ -32,9 +35,11 @@
     <!-- ============================
          EVENTS / NOTIFICATIONS
          ============================ -->
-
     <entry key='event.ignoreDuplicateAlerts'>false</entry>
 
+    <!-- ============================
+         GEOLOCATION
+         ============================ -->
     <entry key='geolocation.enable'>true</entry>
     <entry key='geolocation.type'>google</entry>
     <entry key='geolocation.key'>${GOOGLE_GEOLOCATION_KEY}</entry>
