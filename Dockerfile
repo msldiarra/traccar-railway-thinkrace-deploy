@@ -36,7 +36,7 @@ RUN ./gradlew clean assemble --no-daemon -x test -x check
 FROM traccar/traccar:6.10
 
 # (optional) we still want envsubst in our custom entrypoint
-RUN apk add --no-cache gettext dos2unix curl
+RUN apk add --no-cache gettext dos2unix
 
 WORKDIR /opt/traccar
 
