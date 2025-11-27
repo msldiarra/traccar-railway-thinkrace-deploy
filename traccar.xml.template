@@ -43,6 +43,7 @@
     <entry key='geolocation.enable'>true</entry>
     <entry key='geolocation.type'>google</entry>
     <entry key='geolocation.key'>${GOOGLE_GEOLOCATION_KEY}</entry>
+    <entry key='geolocation.url'>https://www.googleapis.com/geolocation/v1/geolocate?key=${GOOGLE_GEOLOCATION_KEY}</entry>
     <entry key='geolocation.processInvalidPositions'>true</entry>
 
     <entry key='event.forward.url'>https://noqou-production.up.railway.app/api/notifications/webhook</entry>
