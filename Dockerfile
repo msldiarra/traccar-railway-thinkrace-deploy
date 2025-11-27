@@ -5,6 +5,8 @@ WORKDIR /build
 
 # We need git
 RUN apk add --no-cache git
+# (optional) we still want envsubst in our custom entrypoint
+RUN apk add --no-cache gettext dos2unix curl
 
 # ---- CONFIGURABLE ARGS ----
 ARG TRACCAR_REPO=https://github.com/msldiarra/traccar-thinkrace.git

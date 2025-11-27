@@ -9,10 +9,16 @@ echo "[DEBUG] GOOGLE_GEOLOCATION_KEY=$GOOGLE_GEOLOCATION_KEY"
 # Render config from template with env vars
 envsubst < /opt/traccar/conf/traccar.xml.template > /opt/traccar/conf/traccar.xml
 
-# Afficher la section geolocation du XML généré
-echo "[DEBUG] Geolocation config:"
-grep -A5 "geolocation" /opt/traccar/conf/traccar.xml || echo "No geolocation config found"
-
+# Test Google API depuis Railway
+echo "[DEBUG] Testing Google Geolocation API from Railway..."
+RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+  "https://www.googleapis.com/geolocation/v1/geolocate?key=$GOOGLE_GEOLOCATION_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"wifiAccessPoints":[{"macAddress":"e8:a1:f8:eb:d6:0a","signalStrength":-40}]}')
+HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+BODY=$(echo "$RESPONSE" | head -n-1)
+echo "[DEBUG] HTTP Code: $HTTP_CODE"
+echo "[DEBUG] Response: $BODY"
 
 echo "[Traccar] Starting server..."
 
