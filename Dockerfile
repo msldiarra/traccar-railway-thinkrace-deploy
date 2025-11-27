@@ -5,9 +5,6 @@ WORKDIR /build
 
 # We need git
 RUN apk add --no-cache git
-# (optional) we still want envsubst in our custom entrypoint
-ARG CURL_VERSION=1
-RUN apk add --no-cache gettext dos2unix curl
 
 # ---- CONFIGURABLE ARGS ----
 ARG TRACCAR_REPO=https://github.com/msldiarra/traccar-thinkrace.git
@@ -39,7 +36,7 @@ RUN ./gradlew clean assemble --no-daemon -x test -x check
 FROM traccar/traccar:6.10
 
 # (optional) we still want envsubst in our custom entrypoint
-RUN apk add --no-cache gettext dos2unix
+RUN apk add --no-cache gettext dos2unix curl
 
 WORKDIR /opt/traccar
 
