@@ -9,7 +9,7 @@ RUN apk add --no-cache git
 # ---- CONFIGURABLE ARGS ----
 ARG TRACCAR_REPO=https://github.com/msldiarra/traccar-thinkrace.git
 
-ARG CACHE_BUST=6
+ARG CACHE_BUST=8
 RUN echo "Cache bust = $CACHE_BUST"
 # Clone your fork into /build/src
 RUN git clone "$TRACCAR_REPO" src
